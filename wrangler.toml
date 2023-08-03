@@ -1,0 +1,11 @@
+kv_namespace = [
+  
+  {  binding = "SESSIONS_BINDING", id = "df2dab5f4dcf43d0960461caab18f662", preview_id = "0ccb8b769fca493f98d1cd6d48490ee2" }
+
+]
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "remix_workers_test"
+database_id = "d8617bd1-adce-4f3b-9495-8b76e8cd0c76"
+

@@ -28,7 +28,7 @@ export interface Env {
 //   },
 // });
 
-const env = useContext():Env
+const env = useContext()
 export let sessionStorage =createWorkersKVSessionStorage({
     // The KV Namespace where you want to store sessions
     kv: env.SESSIONS_BINDING,

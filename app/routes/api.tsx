@@ -3,6 +3,7 @@
 import type { LoaderFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
+import { authenticator } from "~/services/auth.server";
 
 
 export interface Env {
@@ -15,21 +16,15 @@ export interface Env {
 export const loader: LoaderFunction = async ({ context, params }) => {
   let env = context.env as Env;
 
-  let { results } = await env.DB.prepare("SELECT * FROM Customers LIMIT 5").all();
-  return json(results);
+  // let { results } = await env.DB.prepare("SELECT * FROM Customers LIMIT 5").all();
+  return json(env);
 };
 
 export default function Api() {
   const results = useLoaderData<typeof loader>();
-
+  console.log(results)
   return (
     <div>
-            {results.map(result => (
-                <div key={result.CustomerId}>
-                    <p>{result.CompanyName}</p>
-                    <p>{result.ContactName}</p>
-                </div>
-            ))}
         </div>
   )
 };
